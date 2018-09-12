@@ -4,10 +4,10 @@ import static edu.princeton.cs.algs4.StdOut.println;
 public class LCS {
 //    求最长公共子序列
     public static void main(String[] args) {
-        lcs("BDCABA","ABCBDAB");
+        lcs("ABCBDAB","BDCABA");
     }
 
-    public static void lcs(String a,String b){
+    private static void lcs(String a,String b){
         char[] strA = a.toCharArray();
         char[] strB = b.toCharArray();
         int[][] matrix = new int[strA.length+1][strB.length+1];
@@ -22,16 +22,31 @@ public class LCS {
                 }
             }
         }
-        for(int i=0; i<strA.length+1; i++){
-            for(int j=0; j<strB.length+1;j++){
-                print(matrix[i][j]);
-                print(' ');
+//        for(int i=0; i<strA.length+1; i++){
+//            for(int j=0; j<strB.length+1;j++){
+//                print(matrix[i][j]);
+//                print(' ');
+//            }
+//            println();
+//        }
+        int i =strA.length;//列号
+        int j =strB.length;//行号
+        while(i>0&&j>0){
+            if (matrix[i][j] > max(matrix[i-1][j],matrix[i-1][j-1],matrix[i][j-1])){
+                i--;
+                j--;
+                print(strA[i]);
             }
-            println();
+            else if(matrix[i][j] == matrix[i-1][j]){
+                i--;
+            }
+            else if(matrix[i][j] == matrix[i][j-1]){
+                j--;
+            }
         }
 
     }
-    public static int max(int a, int b, int c){
+    private static int max(int a, int b, int c){
         int max = a;
         if (b>max){
             max=b;
