@@ -1,13 +1,7 @@
-import static edu.princeton.cs.algs4.StdOut.print;
 
 public class QuickShort {
 
     public static void main(String[] args) {
-        //9,6,8,1,9,2,7,6,4
-        //4,6,8,1,9,2,7,6,9
-        //8,2,1,4,9,6,7,6,9
-        //7,2,1,4,6,6,8,9,9
-        //6,2,1,4,6,7,8,9,9
         int a[] = {8,48,2,3,4,91,8,1,2,8};
         quickShort(0,a.length-1,a);
         for(int i =0;i<a.length;i++){
@@ -44,7 +38,6 @@ public class QuickShort {
         int temp = a[j];
         a[j] = a[left];
         a[left] =temp;
-
         return j;
     }
 }
