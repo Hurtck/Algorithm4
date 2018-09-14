@@ -1,10 +1,19 @@
+import java.util.Scanner;
+
 import static edu.princeton.cs.algs4.StdOut.print;
 import static edu.princeton.cs.algs4.StdOut.println;
 
 public class LCS {
 //    求最长公共子序列
     public static void main(String[] args) {
-        lcs("ABCBDAB","BDCABA");
+        System.out.println("请输入串A");
+        Scanner sc = new Scanner(System.in);
+        String a = sc.nextLine();
+        System.out.println("请输入串B");
+        String b = sc.nextLine();
+//        lcs("ABCBDAB","BDCABA");
+        System.out.println("最长公共子序列为：");
+        lcs(a,b);
     }
 
     private static void lcs(String a,String b){
