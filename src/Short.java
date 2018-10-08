@@ -1,11 +1,33 @@
 
-public class QuickShort {
+public class Short {
 
     public static void main(String[] args) {
         int a[] = {8,48,2,3,4,91,8,1,2,8};
-        quickShort(0,a.length-1,a);
-        for(int i =0;i<a.length;i++){
-            System.out.print(a[i]);
+        mergeShort(a,0,a.length-1);
+        for(int i:a){
+            System.out.println(i);
+        }
+    }
+
+
+    private static void mergeShort(int[] a,int lo,int hi){
+        if(hi<=lo) return;
+        int mid = (lo+hi)/2;
+        mergeShort(a,lo,mid);
+        mergeShort(a,mid+1,hi);
+        merge(a,lo,mid,hi);
+    }
+    private static void merge(int[] a,int lo,int mid,int hi){
+        int[] ar = new int[hi-lo+1];
+        int i = lo ,j = mid+1;
+        for(int k =0;k<=hi-lo;k++){
+            ar[k] = a[lo+k];
+        }
+        for(int k = lo;k<=hi;k++){
+            if(i>mid){a[k] = ar[j-lo]; j++;}
+            else if(j>hi){a[k]=ar[i-lo];i++;}
+            else if(ar[i-lo]<ar[j-lo]){a[k] = ar[i-lo];i++;}
+            else{a[k] = ar[j-lo];j++;}
         }
     }
 
