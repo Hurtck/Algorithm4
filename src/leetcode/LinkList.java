@@ -1,7 +1,7 @@
 package leetcode;
 
-//在链表进行排序的操作
-public class SortOnLink {
+//链表相关题
+public class LinkList {
 
     public static void main(String[] args) {
         int[] a = new int[]{3,2,1};

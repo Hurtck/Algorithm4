@@ -3,7 +3,10 @@ package leetcode;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Dobt {
+/**
+ * 树相关的练习题
+ */
+public class Tree {
     //minimum-depth-of-binary-tree
     public int run(TreeNode root) {
         Queue<TreeNode> list = new LinkedList<>();
