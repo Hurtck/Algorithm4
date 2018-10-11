@@ -86,14 +86,40 @@ public class LinkList {
         return head;
     }
 
-
-    static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) {
-            val = x;
-            next = null;
+    
+    //reorder-list
+    public static void reorderList(ListNode head) {
+        if(head==null) return;
+        ListNode quickNode = head;
+        ListNode slowNode = head;
+        while (quickNode!=null&&quickNode.next!=null){
+            quickNode = quickNode.next.next;
+            slowNode = slowNode.next;
+        }
+        ListNode ahead = head;
+        ListNode bhead = slowNode.next;
+        slowNode.next = null;
+        bhead = reversList(bhead);
+        while (bhead!=null){
+            ListNode pNode = ahead.next;
+            ahead.next = bhead;
+            bhead = bhead.next;
+            ahead.next.next = pNode;
+            ahead = pNode;
         }
     }
+
+    public static ListNode reversList(ListNode head){
+        ListNode curNode = head;
+        ListNode preNode = null;
+        while (curNode!=null){
+            ListNode tNode = curNode.next;
+            curNode.next = preNode;
+            preNode = curNode;
+            curNode = tNode;
+        }
+        return preNode;
+    }
+
 
 }
