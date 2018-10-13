@@ -104,7 +104,6 @@ public class BinaryTree {
         }
     }
 
-
     public static TreeNode insertNode(TreeNode root, int val) {
         if(root == null){
             return new TreeNode(val);

@@ -86,7 +86,7 @@ public class LinkList {
         return head;
     }
 
-    
+
     //reorder-list
     public static void reorderList(ListNode head) {
         if(head==null) return;
@@ -121,5 +121,24 @@ public class LinkList {
         return preNode;
     }
 
+    // reorder-list结束
+    // linked-list-cycle-ii
+    public ListNode detectCycle(ListNode head) {
+        if(head == null) return null;
+        ListNode quick = head;
+        ListNode slow = head;
+        while(quick!=null&&quick.next!=null){
+            quick = quick.next.next;
+            slow = slow.next;
+            if(quick == slow) break;
+        }
+        if(quick==null||quick.next==null) return null;
+        slow = head;
+        while (slow != quick){
+            slow = slow.next;
+            quick = quick.next;
+        }
+        return quick;
+    }
 
 }
