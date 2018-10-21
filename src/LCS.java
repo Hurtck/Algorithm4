@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
-import static edu.princeton.cs.algs4.StdOut.print;
-import static edu.princeton.cs.algs4.StdOut.println;
+
 
 public class LCS {
 //    求最长公共子序列
@@ -44,7 +43,6 @@ public class LCS {
             if (matrix[i][j] > max(matrix[i-1][j],matrix[i-1][j-1],matrix[i][j-1])){
                 i--;
                 j--;
-                print(strA[i]);
             }
             else if(matrix[i][j] == matrix[i-1][j]){
                 i--;

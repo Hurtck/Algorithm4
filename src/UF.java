@@ -1,5 +1,3 @@
-import edu.princeton.cs.algs4.StdIn;
-import edu.princeton.cs.algs4.StdOut;
 
 /**
  * Union find 算法，用来判断图中两个节点是否联通
@@ -46,14 +44,14 @@ class UF{
     }
 
     public static void main(String[] args) {
-        int N = StdIn.readInt();
-        UF uf = new UF(N);
-        while(!StdIn.isEmpty()){
-            int p = StdIn.readInt();
-            int q = StdIn.readInt();
-            if(uf.connected(p,q)) continue;
-            StdOut.print(p + "  "+q);
-        }
-        StdOut.print(uf.count+" components");
+//        int N = StdIn.readInt();
+//        UF uf = new UF(N);
+//        while(!StdIn.isEmpty()){
+//            int p = StdIn.readInt();
+//            int q = StdIn.readInt();
+//            if(uf.connected(p,q)) continue;
+//            StdOut.print(p + "  "+q);
+//        }
+//        StdOut.print(uf.count+" components");
     }
 }

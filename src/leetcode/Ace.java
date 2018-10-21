@@ -11,46 +11,19 @@ public class Ace {
 //                new Point(-105,-467),new Point(135,701),new Point(-90,-394),new Point(-184,-551),new Point(150,774)
 //        };
 //        System.out.println(maxPoints(points));
-        int[] a = new int[]{2,3,4,5,6,7};
-        ListNode head  = new ListNode(1);
-        ListNode pNode = head;
-        for(int i=0;i<a.length;i++){
-            pNode.next = new ListNode(a[i]);
-            pNode = pNode.next;
-        }
-        reorderList(head);
+//        int[] a = new int[]{2,3,4,5,6,7};
+//        ListNode head  = new ListNode(1);
+//        ListNode pNode = head;
+//        for(int i=0;i<a.length;i++){
+//            pNode.next = new ListNode(a[i]);
+//            pNode = pNode.next;
+//        }
+//        reorderList(head);
+        Integer a = 1;
+        Integer b =2;
+        Integer c =3;
+        System.out.println(a == (b+a));
     }
 
-    public static ListNode reversList(ListNode head){
-        ListNode curNode = head;
-        ListNode preNode = null;
-        while (curNode!=null){
-            ListNode tNode = curNode.next;
-            curNode.next = preNode;
-            preNode = curNode;
-            curNode = tNode;
-        }
-        return preNode;
-    }
 
-    public static void reorderList(ListNode head) {
-        if(head==null) return;
-        ListNode quickNode = head;
-        ListNode slowNode = head;
-        while (quickNode!=null&&quickNode.next!=null){
-            quickNode = quickNode.next.next;
-            slowNode = slowNode.next;
-        }
-        ListNode ahead = head;
-        ListNode bhead = slowNode.next;
-        slowNode.next = null;
-        bhead = reversList(bhead);
-        while (bhead!=null){
-            ListNode pNode = ahead.next;
-            ahead.next = bhead;
-            bhead = bhead.next;
-            ahead.next.next = pNode;
-            ahead = pNode;
-        }
-    }
 }
