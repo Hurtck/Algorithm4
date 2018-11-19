@@ -1,5 +1,5 @@
 
-public class Short {
+public class Sort {
 
     public static void main(String[] args) {
         int a[] = {8,48,2,3,4,91,8,1,2,8};
